@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/15bbca229c.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./style/style.css">
+    <title>PathFinder</title>
+</head>
+<body>
+    <section id="menu">
+        <div>
+            <h4>PathVisualizer</h4>
+            <div class='options'>
+                <select name="Search" id="Search">
+                    <option defaultValue hidden>Algorithm</option>
+                    <option value="BFS">Bredth-First Search</option>
+                    <option value="DFS">Depth-First Search</option>
+                </select>
+                <button class="algo">Visualize</button>
+            </div>
+        </div>
+    </section>
+    <section id="grid">
+        <table></table>
+    </section>
+
+    <script src="./Algorithm/traverse.js"></script>
+    <script src="./scripts/grid.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

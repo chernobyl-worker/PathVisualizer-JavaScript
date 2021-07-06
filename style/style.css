@@ -1,0 +1,12 @@
+@import url("./menu.css");
+@import url("./board.css");
+
+* {
+  font-family: "Otomanopee One", sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow-y: hidden;
+  text-align: center;
+}

@@ -1,0 +1,42 @@
+.options {
+  height: 2rem;
+  margin: 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(179, 127, 228);
+}
+
+h4 {
+  background-color: rgb(181, 91, 233);
+  color: white;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+button {
+  margin: 0 0.5rem;
+  background-color: white;
+  color: rgb(132, 2, 253);
+  border: 1px solid rgb(132, 2, 253);
+  border-radius: 0.2rem;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background-color: rgb(132, 2, 253);
+  color: white;
+}
+
+select {
+  background-color: white;
+  border: none;
+  color: rgb(132, 2, 253);
+  border-radius: 0.2rem;
+  transition: all 0.5s;
+}
+
+select:hover {
+  background-color: rgb(132, 2, 253);
+  color: white;
+}
