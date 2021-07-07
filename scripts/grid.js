@@ -38,7 +38,7 @@ class Cell {
 }
 
 function addWall(cell) {
-    if(!cell.isStart || !cell.isTarget)
+    if(!cell.isStart && !cell.isTarget) {
         if(cell.isWall) {
             cell.ref.classList = 'blank';
             cell.isWall = false;
@@ -46,4 +46,5 @@ function addWall(cell) {
             cell.ref.classList = 'wall';
             cell.isWall = true;
         }
+    }
 }
