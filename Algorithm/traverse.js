@@ -1,4 +1,5 @@
-function traverse() {
+function traverse(e) {
+    e.disabled = true;
     let algo = document.querySelector('#Search').value;
     let path;
     console.log(algo);
