@@ -1,12 +1,15 @@
 function traverse() {
     let algo = document.querySelector('#Search').value;
+    let path;
     console.log(algo);
     switch(algo) {
         case 'BFS':
-            bfs();
+            path = bfs();
+            colorPath(path)
             break;
         case 'DFS':
-            dfs();
+            path = dfs();
+            colorPath(path);
             break;
         default:
             alert('Select Algorithm');
@@ -17,16 +20,17 @@ function traverse() {
 function bfs() {   // start is row and col index in matrix
     let queue = [];
     queue.push(start);
-    while(queue.length) {
-        let [row,col] = queue.shift();
+    let i = 0;
+    while(i < queue.length) {
+        let [row,col] = queue[i++];
         if(matrix[row][col].visited)
             continue;
         matrix[row][col].visited = true;
-        matrix[row][col].ref.classList +=' visited';
+        // matrix[row][col].ref.classList +=' visited';
         
         if(matrix[row][col].isTarget) {
-            colorPath();
-            return;
+            // colorPath();
+            return queue;
         }
 
         if(col < matrix[row].length-1 && !matrix[row][col+1].visited && !matrix[row][col+1].isWall) {
@@ -46,20 +50,23 @@ function bfs() {   // start is row and col index in matrix
             queue.push([row+1,col]);
         }
     }
+    // alert('NO Path');
 }
 
 
 function dfs() {
     let stack = [];
+    let path = [];
     stack.push(start);
     while(stack.length) {
-        let [row,col] = stack.pop();
+        path.push(stack.pop());
+        let [row,col] = path[path.length-1];
         matrix[row][col].visited = true;
-        matrix[row][col].ref.classList += ' visited';
+        // matrix[row][col].ref.classList += ' visited';
 
         if(matrix[row][col].isTarget) {
-            colorPath();
-            return;
+            // colorPath(); 
+            return path;
         }
 
         if(col > 0 && !matrix[row][col-1].visited && !matrix[row][col-1].isWall) {
@@ -81,14 +88,21 @@ function dfs() {
     }
 }
 
-function colorPath() {
-    let node = matrix[target[0]][target[1]];
-    if(!node.visited)
-        alert('No Path');
-    else{
-        while(node) {
-            node.ref.classList += ' path';
-            node = node.parent;
-        }
+function colorPath(path) {
+    for(let i=0; i<path.length; i++) {
+        setTimeout(() => {
+            let [row,col] = path[i];
+            if(matrix[row][col].visited) {
+                matrix[row][col].ref.classList = 'visited';
+            }
+            if(matrix[row][col].isTarget) {
+                let node = matrix[target[0]][target[1]];
+                while(node) {
+                    node.ref.classList = ' path';
+                    node = node.parent;
+                    i++;
+                }
+            }
+        },10*i);
     }
 }

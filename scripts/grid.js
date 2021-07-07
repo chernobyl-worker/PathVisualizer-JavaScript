@@ -17,6 +17,7 @@ function grid(rows, cols) {
             if(temp[j].isStart)
                 temp[j].ref.innerHTML = '<i class="fas fa-star-of-life"></i>';
             tr.appendChild(cell);
+            cell.addEventListener('click',() => {addWall(temp[j])});
         }
         matrix.push(temp);
         board.appendChild(tr);
@@ -34,4 +35,15 @@ class Cell {
         this.isWall = false;
         this.ref = ref;
     }
+}
+
+function addWall(cell) {
+    if(!cell.isStart || !cell.isTarget)
+        if(cell.isWall) {
+            cell.ref.classList = 'blank';
+            cell.isWall = false;
+        } else {
+            cell.ref.classList = 'wall';
+            cell.isWall = true;
+        }
 }

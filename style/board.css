@@ -14,8 +14,7 @@ td {
 }
 
 .visited {
-  transition: all 1s;
-  background-color: rgb(66, 164, 189);
+  animation: visit ease-in 2s forwards;
 }
 
 .path {
@@ -31,4 +30,16 @@ td {
 .blank {
   transition: all 1s;
   background-color: white;
+}
+
+@keyframes visit {
+  0% {
+    background-color: rgb(202, 36, 188);
+  }
+  50% {
+    background-color: rgb(144, 43, 175);
+  }
+  100% {
+    background-color: rgb(157, 47, 201);
+  }
 }
