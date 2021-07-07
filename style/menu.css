@@ -14,7 +14,7 @@ h4 {
   padding: 0.5rem;
 }
 
-button {
+.algo {
   margin: 0 0.5rem;
   background-color: white;
   color: rgb(132, 2, 253);
@@ -23,8 +23,22 @@ button {
   transition: all 0.5s;
 }
 
-button:hover {
+.algo:hover {
   background-color: rgb(132, 2, 253);
+  color: white;
+}
+
+.reset {
+  margin: 0 0.5rem;
+  background-color: white;
+  color: rgb(253, 2, 2);
+  border: 1px solid rgb(253, 2, 2);
+  border-radius: 0.2rem;
+  transition: all 0.5s;
+}
+
+.reset:hover {
+  background-color: rgb(253, 2, 2);
   color: white;
 }
 

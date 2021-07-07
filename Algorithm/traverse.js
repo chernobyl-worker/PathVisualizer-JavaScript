@@ -6,16 +6,16 @@ function traverse(e) {
     switch(algo) {
         case 'BFS':
             path = bfs();
-            colorPath(path)
             break;
         case 'DFS':
             path = dfs();
-            colorPath(path);
             break;
         default:
             alert('Select Algorithm');
             break;
     }
+    if(matrix[target[0]][target[1]].visited)
+        colorPath(path);
 }
 
 function bfs() {   // start is row and col index in matrix
@@ -51,7 +51,7 @@ function bfs() {   // start is row and col index in matrix
             queue.push([row+1,col]);
         }
     }
-    // alert('NO Path');
+    alert('NO Path');
 }
 
 
@@ -87,6 +87,7 @@ function dfs() {
             stack.push([row-1,col]);
         }
     }
+    alert("NO Path");
 }
 
 function colorPath(path) {
@@ -105,5 +106,6 @@ function colorPath(path) {
                 }
             }
         },10*i);
+        document.querySelector('.reset').disabled = false;
     }
 }
