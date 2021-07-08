@@ -1,13 +1,14 @@
 function traverse(e) {
-    e.disabled = true;
     let algo = document.querySelector('#Search').value;
     let path;
     console.log(algo);
     switch(algo) {
         case 'BFS':
+            e.disabled = true;
             path = bfs();
             break;
         case 'DFS':
+            e.disabled = true;
             path = dfs();
             break;
         default:
