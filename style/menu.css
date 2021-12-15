@@ -14,13 +14,17 @@ h4 {
   padding: 0.5rem;
 }
 
-.algo {
+button {
   margin: 0 0.5rem;
-  background-color: white;
-  color: rgb(132, 2, 253);
-  border: 1px solid rgb(132, 2, 253);
+  border: 1px solid;
   border-radius: 0.2rem;
   transition: all 0.5s;
+}
+
+.algo {
+  background-color: white;
+  color: rgb(132, 2, 253);
+  border-color: rgb(132, 2, 253);
 }
 
 .algo:hover {
@@ -29,12 +33,9 @@ h4 {
 }
 
 .reset {
-  margin: 0 0.5rem;
   background-color: white;
   color: rgb(253, 2, 2);
-  border: 1px solid rgb(253, 2, 2);
-  border-radius: 0.2rem;
-  transition: all 0.5s;
+  border-color:rgb(253, 2, 2);
 }
 
 .reset:hover {
@@ -52,5 +53,16 @@ select {
 
 select:hover {
   background-color: rgb(132, 2, 253);
+  color: white;
+}
+
+.maze {
+  background-color: white;
+  color: rgb(72, 1, 94);
+  border-color: rgb(72, 1, 94);
+}
+
+.maze:hover {
+  background-color: rgb(72, 1, 94);
   color: white;
 }

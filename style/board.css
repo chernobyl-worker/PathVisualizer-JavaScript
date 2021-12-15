@@ -35,11 +35,14 @@ td {
 @keyframes visit {
   0% {
     background-color: rgb(202, 36, 188);
+    transform: scale(0,0);
   }
   50% {
     background-color: rgb(144, 43, 175);
+    transform: scale(0.5,0.5);
   }
   100% {
     background-color: rgb(139, 47, 201);
+    transform: scale(1,1);
   }
 }
