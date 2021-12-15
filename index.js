@@ -33,7 +33,7 @@ function addBorder() {
 }
 
 function getmid(start, end, prev = 0) {
-    let mid = Math.floor((end - start) * Math.random()) + start;
+    let mid = Math.round((end - start) * Math.random()) + start;
     // if (end - start <= 1) return mid;
     // while (mid == prev) {
     //     mid = Math.floor((end - start) * Math.random()) + start;
@@ -42,7 +42,7 @@ function getmid(start, end, prev = 0) {
 }
 
 function divide(rs, re, cs, ce) {
-    if (re - rs <= 3 || ce - cs <= 3) return;
+    if (re - rs <= 3 && ce - cs <= 3) return;
     if (re - rs > ce - cs) {
         // let mid = Math.floor((rs + re) / 2);
         let mid = getmid(rs + 1, re - 1);
